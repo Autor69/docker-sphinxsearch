@@ -29,8 +29,9 @@ RUN indexer -v
 RUN ln -sv /dev/stdout /opt/sphinx/log/query.log
 RUN ln -sv /dev/stdout /opt/sphinx/log/searchd.log
 
-# expose TCP port
-EXPOSE 36307
+# expose TCP ports
+EXPOSE 9312
+EXPOSE 9306
 
 VOLUME /opt/sphinx/conf
 
