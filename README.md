@@ -1,13 +1,13 @@
 # docker-sphinxsearch
 Docker image for Sphinx search engine
 
-[Read more](https://hub.docker.com/r/macbre/sphinxsearch/)
+[Read more](https://hub.docker.com/r/autor69/docker-sphinxsearch/)
 
 ```
-docker pull macbre/sphinxsearch
+docker pull autor69/sphinxsearch
 ```
 
-## [Tags available](https://hub.docker.com/r/macbre/sphinxsearch/tags/)
+## [Tags available](https://hub.docker.com/r/autor69/docker-sphinxsearch/tags/)
 
 ### `3.0.3`, `latest`
 
