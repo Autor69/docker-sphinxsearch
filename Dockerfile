@@ -23,7 +23,10 @@ RUN rm /tmp/sphinxsearch.tar.gz
 
 # point to sphinx binaries
 ENV PATH "${PATH}:/opt/sphinx/sphinx-3.0.3/bin"
-RUN indexer -v
+ADD sphinx.conf /opt/sphinx/conf/sphinx.conf
+ADD indexsearch.sh /opt/sphinx/sphinx-3.0.3/bin/indexsearch
+RUN chmod a+x /opt/sphinx/sphinx-3.0.3/bin/indexsearch
+RUN indexer -v --config /opt/sphinx/conf/sphinx.conf
 
 # redirect logs to stdout
 RUN ln -sv /dev/stdout /opt/sphinx/log/query.log
@@ -33,6 +36,5 @@ RUN ln -sv /dev/stdout /opt/sphinx/log/searchd.log
 EXPOSE 9312
 EXPOSE 9306
 
-VOLUME /opt/sphinx/conf
-
-CMD searchd --nodetach --config /opt/sphinx/conf/sphinx.conf
+WORKDIR /opt/sphinx
+CMD indexsearch
